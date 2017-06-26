@@ -1,0 +1,136 @@
+{* This is the welcome page, you can delete it *}
+
+{block title}
+Domů
+{/block}
+
+
+{block content}
+<div class="container">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Přehled za posledních 7 dní</h4>
+        </div>
+        <div class="panel-body">
+
+            <div class="row">
+                <p style="padding-left: 10px;">Cílem této aplikace je schromažďování dat o vypravování vozidel MHD v Plzni.</p>
+                <p style="padding-left: 10px;">Každý, kdo má chuť, může do aplikace přispívat. Pro zapisování vypravenosti se musíte <a href="{plink Sign:in}"> přihlásit</a> nebo <a href="{plink Register:}"> zaregistrovat</a>.</p>
+                <p style="padding-left: 10px;"><font color="red">Aplikace může obsahovat chyby. Pokud nějakou objevíte nebo máte nápad na vylepšení, neváhejte nás <a href="{plink Contact:}">kontaktovat</a>.</font></p>
+
+                {for $i=0; $i<7; $i++}
+
+                    <div class="padding-left-right-10px col-lg-1">
+                        <b>{$days[$i]}</b><br>
+                        {$dates[$i]}<br>
+
+                        <table id="den" class="table table-bordered">
+                            <tr class="nadpis1">
+                                <td colspan="2"><b>Tramvaje</b></td>
+                            </tr>
+
+                            <tr>
+                                <td style="width:50%;"><b>LINKA/<small>kurz</small></b></td>
+                                <td>VŮZ</td>
+                            </tr>
+
+                            {if $records0[$i] != null}
+
+                                {foreach $records0[$i] as $record}
+
+                                    <tr>
+                                        <td>
+                                            <b>{$record->linka_text}<b>
+                                                    {if $record->kurz > 0}/ <small>{$record->kurz}</small> {/if}
+                                                    {if $record->poznamka} <b><span title="{$record->poznamka}"> [?]</span></b> {/if}
+                                                    </td>
+                                                    <td>
+                                                        <span title="Vložil: {$record->autor}">{$record->vuz1}
+                                                            {if $record->vuz2 > 0} + {$record->vuz2} {/if}
+                                                        </span>
+                                                    </td>
+                                                    </tr>
+                                                {/foreach}
+                                            {else}
+                                                <tr>
+                                                    <td colspan="2">Nebyl přidán žádný záznam.</td>
+                                                </tr>
+
+                                            {/if}
+                                            </table>
+
+                                            <table id="den" class="table table-bordered">
+                                                <tr class="nadpis2">
+                                                    <td colspan="2"><b>Trolejbusy</b></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td style="width:50%;"><b>LINKA/<small>kurz</small></b></td>
+                                                    <td>VŮZ</td>
+                                                </tr>
+
+                                                {if $records1[$i] != null}
+                                                    {foreach $records1[$i] as $record1}
+                                                        <tr>
+                                                            <td>
+                                                                <b>{$record1->linka_text}<b>
+                                                                        {if $record1->kurz > 0}/ <small>{$record1->kurz}</small> {/if}
+                                                                        {if $record1->poznamka} <b><span title="{$record1->poznamka}"> [?]</span></b> {/if}
+                                                                        </td>
+                                                                        <td>
+                                                                            <span title="Vložil: {$record1->autor}">{$record1->vuz1}</span>
+                                                                        </td>
+                                                                        </tr>
+                                                                    {/foreach}
+                                                                {else}
+                                                                    <tr>
+                                                                        <td colspan="2">Nebyl přidán žádný záznam.</td>
+                                                                    </tr>
+
+                                                                {/if}
+
+
+                                                                </table>
+
+                                                                <table id="den" class="table table-bordered">
+                                                                    <tr class="nadpis3">
+                                                                        <td colspan="2"><b>Autobusy</b></td>
+                                                                    </tr>
+
+                                                                    <tr>
+                                                                        <td style="width:50%;"><b>LINKA/<small>kurz</small></b></td>
+                                                                        <td>VŮZ</td>
+                                                                    </tr>
+
+                                                                    {if $records2[$i] != null}
+                                                                        {foreach $records2[$i] as $record}
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <b>{$record->linka_text}<b>
+                                                                                            {if $record->kurz > 0}/ <small>{$record->kurz}</small> {/if}
+                                                                                            {if $record->poznamka} <b><span title="{$record->poznamka}"> [?]</span></b> {/if}
+                                                                                            </td>
+                                                                                            <td>
+                                                                                                <span title="Vložil: {$record->autor}">{$record->vuz1}</span>
+                                                                                            </td>
+                                                                                            </tr>
+                                                                                        {/foreach}
+                                                                                    {else}
+                                                                                        <tr>
+                                                                                            <td colspan="2">Nebyl přidán žádný záznam.</td>
+                                                                                        </tr>
+
+                                                                                    {/if}
+                                                                                    </table>
+                                                                                    </div>
+
+                                                                                {/for}
+
+
+
+                                                                                </div>
+                                                                                </div>
+                                                                                </div>
+                                                                                </div>
+                                                                                {/block}

@@ -1,0 +1,37 @@
+
+{block content}
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 n:block=title>Profil</h4>
+        </div>
+        <div class="panel-body">
+            <div class="profil">
+                <fieldset>
+                    <legend>Osobní</legend>
+                    <div class="inprofil">
+                        <dl>
+                            <dt>Uživatelské jméno</dt><dd>{$profileName}</dd>
+                            <dt>Pozice</dt><dd>{$role}</dd>
+                            <dt>Skutečné jméno</dt><dd>{if $name != NULL} {$name} {else}<i>(Neuvedeno)</i>{/if}</dd>
+                            <dt>Bydliště</dt><dd>{if $place != NULL} {$place} {else}<i>(Neuvedeno)</i>{/if}</dd>
+                            <dt>E-mail</dt><dd>{$email}</dd>
+                        </dl>
+                    </div>
+
+                    <legend>Aktivity</legend>
+                    <div class="inprofil">
+                        <dl>
+                            <dt>Počet záznamů</dt><dd>{$userNumberOfRecords}</dd>
+                            <dt>Poslední přihlášení</dt><dd>{$lastLogin}</dd>
+                            <dt>Registrovaný od</dt><dd>{$registered}</dd>
+                        </dl>
+                    </div>
+                    {if $user->isLoggedIn() && $pageID == $userID}<a href ="{plink User:settings $userID}"><button type="button" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Změna profilu</button></a>{/if}
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</div>
+
+{/block}

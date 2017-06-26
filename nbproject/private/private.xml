@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>app/bootstrap.php</url>
+            <bookmark id="1">
+                <name/>
+                <line>0</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/MHD7/app/presenters/templates/User/settings.latte</file>
+            <file>file:/C:/xampp/htdocs/MHD7/app/presenters/InsertPresenter.php</file>
+            <file>file:/C:/xampp/htdocs/MHD7/.git/config</file>
+            <file>file:/C:/xampp/htdocs/MHD7/app/components/UserAddedList/UserAddedListGrid.php</file>
+            <file>file:/C:/xampp/htdocs/MHD7/app/presenters/templates/@layout.latte</file>
+            <file>file:/C:/xampp/htdocs/MHD7/app/components/SearchList/SearchListGrid.php</file>
+            <file>file:/C:/xampp/htdocs/MHD7/app/components/LineList/LinesListGrid.php</file>
+            <file>file:/C:/xampp/htdocs/MHD7/app/presenters/templates/Insert/default.latte</file>
+            <file>file:/C:/xampp/htdocs/MHD7/app/model/InsertRepository.php</file>
+        </group>
+    </open-files>
+</project-private>

@@ -1,0 +1,44 @@
+
+{block content}
+<div class="container">
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 n:block=title>Vložení záznamu</h4>
+        </div>
+
+        <div class="panel-body">
+            {if ($user->isLoggedIn())}
+                <div class="col-md-3">
+                    <div class="loginForm">
+                        <h4>Přidat záznam</h4>
+                        {control insertForm}
+                    </div>
+                </div>
+
+                <div class="col-md-1"></div>
+
+                <div class="col-md-3">
+                    <h4>Upravit záznam</h4>
+                    <p>Mnou vložená data za poslední 3 dny (zobrazuje se max. posledních 50 záznamů)</p>
+                    <p>Upravit a smazat nejdou data, které potvrdil (znova vložil) někdo jiný.</p>
+                    <p>U záznamu bez zadaného kurzu nebo druhého vozu se zobrazuje prázdné pole.</p>
+
+                    {control userAddedListGrid}
+
+
+
+
+                </div>
+
+            {else}
+                <p>Pro přidání záznamu <a href="{plink Sign:in}">se musíte přihlásit</a></p>
+            {/if}
+        </div>
+    </div>
+    {/block}
+
+    {block stript}
+    <script src="{$basePath}/js/insetFormVehicles.js"></script>
+    {/block}
+

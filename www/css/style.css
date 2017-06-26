@@ -1,0 +1,270 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, "Lucida Sans Unicode", "Lucida Grande";
+
+    background-attachment: fixed;
+    background-size: 100%;
+    background-position: center top;
+    font-size: 12px;
+}
+
+h1 {
+	color: #3484D2;
+}
+
+#ajax-spinner {
+	margin: 15px 0 0 15px;
+	padding: 13px;
+	background: white url('../images/spinner.gif') no-repeat 50% 50%;
+	font-size: 0;
+	z-index: 123456;
+	display: none;
+}
+
+div.flash {
+	color: black;
+	background: #FFF9D7;
+	border: 1px solid #E2C822;
+	padding: 1em;
+	margin: 1em 0;
+}
+
+a[href^="#error:"] {
+	background: red;
+	color: white;
+}
+
+form th, form td {
+	vertical-align: top;
+	font-weight: normal;
+}
+
+form th {
+	text-align: right;
+}
+
+form .required label {
+	font-weight: bold;
+}
+
+form .error {
+	color: #D00;
+	font-weight: bold;
+}
+
+.navbar {
+  border-radius: 0 ;
+}
+
+
+
+.menu-green {
+    background: linear-gradient(to bottom,#006400 0%, #32CD32 100%);
+}
+
+.menu-first-line {
+    height: 28px;  
+}
+
+.menu-first-line .innerHead {
+    border-bottom: 1px solid #3b9a76 !important;
+    padding: 5px 0;
+}
+
+.innerHead {
+    margin: 0 auto;
+}
+
+.innerMenu {
+    padding: 0;
+}
+
+.helpMenu, .userMenu, .subMenu {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    font-size: 13px;
+    font-weight: 400;
+    color: #d8d8d8;
+}
+
+.helpMenu li a, .userMenu li a {
+   color: #fff !important;
+   text-decoration: none;
+   transition: color .15s, background .15s;
+}
+
+.menu-second-line {
+    height: 56px; 
+}
+
+.menu-second-line .navbar-header a {
+    color: black;
+}
+
+.menu-thirt-line {
+    background-color: #2b2b2b;
+    min-height: 5px;
+}
+
+.menu-thirt-line .subMenu {
+    height: 33px;
+}
+
+.subMenu {
+    top: 7px;
+    position: relative;
+    font-size: 15px;
+}
+
+.subMenu li a {
+    color: #d8d8d8 !important;
+}
+
+.subMenu li a:hover {
+    color: #777 !important;
+}
+
+.subMenu li:first-child a {
+    padding-left: 0;
+}
+
+
+.border {
+    border: 2px solid;
+}
+
+
+.col-md-1{
+    padding: 0;
+}
+
+tr.nadpis3 td, tr.nadpis2 td, tr.nadpis1 td
+{
+    padding: 5px 10px !important;
+    text-align: center;
+}
+
+tr.nadpis1 td
+{
+    background: linear-gradient(to bottom, #FFF5CC 0%, #FFCC00 100%);
+}
+
+tr.nadpis2 td
+{
+    background: linear-gradient(to bottom,#32CD32 0%, #006400 100%);
+}
+
+tr.nadpis3 td
+{
+    background: linear-gradient(to bottom,#FF0000 0%, #CC0000 100%);
+}
+
+#den td {
+    border: 1px solid #000000;
+    border-collapse: collapse;
+    padding: 2px;
+    text-align: center;
+}
+
+
+.twoRow .navbar-collapse {
+        clear: left;
+}
+
+.navbar-inverse .navbar-nav li a, .navbar-inverse .navbar-nav p {
+    color: #000000;
+}
+
+.navbar>.container .navbar-brand {
+    margin-left: 0;
+    color: #000000;
+}
+
+.loginForm{
+    max-width: 330px;
+    margin: 0 auto;
+}
+
+.insertForm{
+    max-width: 330px;
+    margin: 0 auto;
+}
+
+.not-active-link {
+   pointer-events: none;
+   cursor: default;
+}
+
+.not-margin{
+    margin: 0;
+}
+
+.dropdown-menu-white:hover{
+    color: #fff;
+}
+
+.navbar-nav li a {
+    line-height: 17px;
+}
+
+.padding-left-right-10px {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+td {
+    padding: 0;
+}
+
+.panel-default .panel-heading {
+    background-color: #F0BF32;
+}
+
+.panel-heading h4 {
+    margin:5px 0;
+
+    
+}
+
+.panel-body {
+    background-color: #F7F5EE;  
+}
+
+.panel-body-login {
+    padding: 30px 20px;
+}
+
+.profil {
+    padding-bottom: 12px;
+}
+
+fieldset {
+    padding: 0 12px;
+}
+
+legend {
+    padding: 0 6px;
+    margin: 0;
+    font-size: 18px;
+}
+
+.inprofil {
+    padding: 9px 0 12px 0;
+}
+
+dt, dd {
+    padding: 0 3px;
+    line-height: 2em;
+}
+
+dt {
+    float: left;
+    width: 13em; 
+    text-align: right;
+}
+
+dd {
+    margin-left: 14em;
+}

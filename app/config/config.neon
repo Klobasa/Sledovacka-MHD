@@ -1,0 +1,46 @@
+#
+# WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
+# https://nette.org/security-warning
+#
+parameters:
+
+
+php:
+	date.timezone: Europe/Prague
+
+
+application:
+	errorPresenter: Error
+	mapping:
+		*: App\*Module\Presenters\*Presenter
+
+
+session:
+	expiration: 14 days
+
+
+services:
+	router: App\RouterFactory::createRouter
+	- App\Model\UserManager
+	- App\Forms\SignFormFactory
+	- App\Forms\RegisterFormFactory
+	- App\Model\AuthorizatorFactory::create
+	LineListControlFactory: App\Components\LineListControlFactory
+	RecordListControlFactory: App\Components\RecordListControlFactory
+	UserAddedListControlFactory: App\Components\UserAddedListControlFactory
+	SearchListControlFactory: App\Components\SearchListControlFactory
+	AdminUsersControlFactory: App\Components\AdminUsersControlFactory
+	Admin: AdminRepository
+	Contact: ContactRepository
+	Homepage: HomepageModel
+	Insert: InsertRepository
+	Register: RegisterRepository
+	User: UserRepository
+	Base: BaseRepository
+
+extensions:
+    recaptcha: Minetro\Forms\reCAPTCHA\ReCaptchaExtension
+
+recaptcha:
+    secretKey: 6LeNYggTAAAAAAvhm3u9-mw1WE3rxhXEY9_p9g5S
+    siteKey: 6LeNYggTAAAAAKWjMn8qh2NNcY6oz0FKES3x3Dsd

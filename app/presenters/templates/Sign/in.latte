@@ -1,0 +1,18 @@
+{block content}
+<div class="container">
+
+    <div class="loginForm">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 n:block=title>Přihlášení</h4>
+            </div>
+
+            <div class="panel-body panel-body-login">
+                {control signInForm}
+                <p><a href="{plink User:requestPasswordReset}">Zapomenuté heslo</a></p>
+            </div>
+
+        </div>
+    </div>
+</div>
+

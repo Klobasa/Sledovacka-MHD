@@ -1,0 +1,41 @@
+{block title}
+Admin
+{/block}
+
+{block content}
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Přehled</h4>
+        </div>
+        <div class="panel-body">
+            <div>
+              <fieldset>
+                    <legend>Uživatelé</legend>
+                    <div>
+                        <dl>
+                            <dt>Počet uživatelů</dt><dd>{$usersNumber}</dd>
+                            <dt>Počet aktivních uživatelů</dt><dd>{$activeUsersNumber}</dd>
+                            <dt>Počet zabanovaných uživatelů</dt><dd>N/A - neimplementováno</dd>
+                            <dt>Počet nových uživatelů (měsíc)</dt><dd>{$newUsersNumber}</dd>
+                        </dl>
+                    </div>
+                    
+                    <legend>Databáze</legend>
+                    <div>
+                        <dl>
+                            <dt>Počet záznamů</dt><dd>{$recordsAllDatabase}</dd>
+                            <dt>Počet záznamů za poslední rok</dt><dd>{$recordsYearDatabase}</dd>
+                            <dt>Počet záznamů za posledních 30 dní</dt><dd>{$recordsMonthDatabase}</dd>
+                            <dt>Počet záznamů za posledních 7 dní</dt><dd>{$recordsWeekDatabase}</dd>
+                            <dt>Počet záznamů dnes</dt><dd>{$recordsTodayDatabase}</dd>
+                            
+                        </dl>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        
+    </div>
+</div>
+{/block}

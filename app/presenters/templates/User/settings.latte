@@ -1,0 +1,37 @@
+{block content}
+<div class="container">
+    {form editProfileForm}
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 n:block=title><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Nastavení profilu</h4>
+            </div>
+            <div class="panel-body">
+                <div class="profil">
+
+                    <fieldset>
+
+                        <legend>Osobní</legend>
+                        <div class="inprofil">
+                            <dl>
+                                <dt>Uživatelské jméno</dt><dd>{$profileName}</dd>
+                                <dt>Heslo</dt><dd><a href="{plink User:resetPassword $userID}">Změnit heslo</a></dd>
+                                <dt>E-mail</dt><dd><!--<a href="">Změnit email</a> - -->{$email}</dd>
+                                <dt>Skutečné jméno</dt><dd>{input jmeno}</dd>
+                                <dt>Bydliště</dt><dd>{input bydliste}</dd><dd><i>Pokud nechcete informace uvádět, nechte pole prázdné</i></dd>
+                            </dl>
+                        </div>
+
+                        <button n:name=zmenit type="submit" class="btn btn-success btn-xs {if $user->isInRole(1)}disabled{/if}" {if $user->isInRole(1)}disabled="disabled"{/if}><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Uložit</button>
+                        <a href ="{plink User:profile $userID}"><button  type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Zpět</button></a>
+                        {if $user->isInRole(1)}<p><i><b>Tento uživatel nemůže měnit svůj profil</b></i></p>{/if}
+
+                    </fieldset>
+
+                </div>
+            </div>
+        </div>
+    {/form}
+</div>
+
+{/block}

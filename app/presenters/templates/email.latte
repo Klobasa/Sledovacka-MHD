@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title> Potvrzení registrace</title>
+
+    </head>
+
+    <body>
+        <p>Dobrý den,</p>
+
+        <p>na stránce <a href="{link //Homepage: }">Sledovačka Plzeň</a> byl pod tímto emailem založen účet.</p>
+        <br>
+        <p>Uživatelské jméno: {$values->username}</p>
+        <br>
+        <p><a href="{link //Register:verify, $values->token}">Pro dokončení registrace klikněte na tento odkaz</a></p>
+        <p>Aktivační odkaz je platný po dobu 24 hodin, tj. do: {$activateTime}.<p>
+            <br><br>
+        <p><i>(Tento email byl vygenerován automaticky. Prosím, neodpovídejte na něj.)</i></p>
+    </body>
+</html>

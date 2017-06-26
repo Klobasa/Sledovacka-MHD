@@ -1,0 +1,136 @@
+{**
+ * @param string   $basePath web base path
+ * @param array    $flashes  flash messages
+*}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>{ifset title}{include title|striptags} | {/ifset}Sledovačka MHD Plzeň</title>
+
+
+
+        <link rel="stylesheet" href="{$basePath}/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{$basePath}/css/style.css">
+        <link rel="shortcut icon" href="{$basePath}/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {block head}{/block}
+       <!-- <link rel="stylesheet" type="text/css" href="{$basePath}/bower_components/bootstrap/dist/css/bootstrap.css">-->
+        <link rel="stylesheet" type="text/css" href="{$basePath}/bower_components/happy/dist/happy.css">
+        <link rel="stylesheet" type="text/css" href="{$basePath}/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css">
+        <link rel="stylesheet" type="text/css" href="{$basePath}/bower_components/ublaboo-datagrid/assets/dist/datagrid.css">
+        <link rel="stylesheet" type="text/css" href="{$basePath}/bower_components/ublaboo-datagrid/assets/dist/datagrid-spinners.css">
+       <!-- <link rel="stylesheet" type="text/css" href="{$basePath}/bower_components/bootstrap-select/dist/css/bootstrap-select.css">-->
+
+        <script src="{$basePath}/bower_components/jquery/dist/jquery.js"></script>
+        <script src="{$basePath}/bower_components/nette-forms/src/assets/netteForms.js"></script>
+        <script src="{$basePath}/bower_components/nette.ajax.js/nette.ajax.js"></script>
+
+        <script src="{$basePath}/bower_components/happy/dist/happy.js"></script>
+        <script src="{$basePath}/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+        <script src="{$basePath}/bower_components/jquery-ui-sortable/jquery-ui-sortable.js"></script>
+        <script src="{$basePath}/bower_components/ublaboo-datagrid/assets/dist/datagrid.js"></script>
+
+        <!--<script src="{$basePath}/bower_components/ublaboo-datagrid/assets/dist/datagrid-instant-url-refresh.js"></script>-->
+
+        <script src="{$basePath}/bower_components/ublaboo-datagrid/assets/dist/datagrid-spinners.js"></script>
+        <script src="{$basePath}/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+       <!-- <script src="{$basePath}/bower_components/bootstrap-select/dist/js/bootstrap-select.js"></script>-->
+
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-inverse twoRow menu-green">
+            <div class="container">
+                <!-- Header -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle"
+                            data-toggle="collapse"
+                            data-target="#targetData1">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{plink Homepage:}">
+                        Sledovačka MHD Plzeň
+                    </a>
+
+                </div>
+                <div class="hidden-xs">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!--<li><a href="{plink Contact:bug}">Nahlásit chybu</a></li>-->
+                        <!--<li><a href="#">Nápověda</a></li>-->
+                        <li><a href="{plink Contact:}">Kontakt</a></li>
+                        <li><p class="navbar-text" id="time"><span class="glyphicon glyphicon-time"></span> 00:00:00</p></li>
+                    </ul>
+                </div>
+
+
+                <!-- Navbar Links -->
+                <div class="collapse navbar-collapse" id="targetData1">
+                    <ul class="nav navbar-nav navbar-right">
+                        {if $user->isLoggedIn() == true}
+
+                            <li><a href="{plink User:profile $userID}"><span class="glyphicon glyphicon-user"></span> {$username}</a></li>
+                            {if $user->isInRole(50)}<li><a href="{plink Admin:}"><span class="glyphicon glyphicon-eye-open"></span> Administrace</a></li>{/if}
+                            <li><a href="{plink Sign:out}">Odhlásit <span class="glyphicon glyphicon-log-out"></span></a></li>
+
+                        {else}
+                            <li><a href="{plink Register:}"><span class="glyphicon glyphicon-user"></span> Registrovat</a></li>
+                            <li><a href="{plink Sign:in}"><span class="glyphicon glyphicon-log-in"></span> Přihlásit</a></li>
+                            {/if}
+                    </ul>
+
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="{plink Homepage:}">Aktuální přehled</a></li>
+                        <li><a href="{plink Search:}">Kompletní přehled</a></li>
+                        <li><a href="{plink Insert:}">Přidat záznam</a></li>
+                    </ul>
+
+                    <div class="visible-xs">
+                        <ul class="nav navbar-nav navbar-right">
+                            <!-- <li><a href="#">Nahlásit chybu</a></li>-->
+                            <!-- <li><a href="#">Nápověda</a></li>-->
+                            <li><a href="{plink Contact:}">Kontakt</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--
+         <div class="dropdown">
+                            <li class="dropdown-toggle" data-toggle="dropdown"><a href="">Přihlášen: <span class="caret"></span></a></li>
+                       <ul class="dropdown-menu">
+                           <li><a n:href="Sign:out">Odhlásit se</a></li>
+                       </ul>
+        -->
+
+        <div class="container">
+            <div n:foreach="$flashes as $flash" class="alert alert-{$flash->type}">{$flash->message|noescape}</div>
+        </div>
+
+
+        {include content}
+
+        {block scripts}
+        <!--<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>-->
+        <script src="{$basePath}/js/time.js"></script>
+        <script src="{$basePath}/js/jquery.js"></script>
+        <script src="{$basePath}/js/bootstrap.min.js"></script>
+        <script src="//nette.github.io/resources/js/netteForms.min.js"></script>
+        <script src="{$basePath}/js/main.js"></script>
+        <!--<script src="{$basePath}/js/facebookSDK.js"></script>-->
+        {ifset #script}
+            {include script}
+        {/ifset}
+
+        <script>$.nette.init();</script>
+        {/block}
+    </body>
+</html>
